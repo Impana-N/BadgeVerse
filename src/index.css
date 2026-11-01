@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', 'Sora', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #160e24;
+    color: #F7F3FF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom iridescent and dreamy gradient utilities */
+.bg-dream-gradient {
+  background: radial-gradient(circle at 50% 20%, rgba(201, 184, 245, 0.18) 0%, rgba(48, 36, 61, 0.5) 60%, rgba(22, 14, 36, 0.95) 100%);
+}
+
+.glass-panel {
+  background: rgba(48, 36, 61, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 184, 245, 0.22);
+}
+
+.glass-panel-light {
+  background: rgba(247, 243, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 184, 245, 0.4);
+}
+
+.text-gradient-dream {
+  background: linear-gradient(135deg, #F7F3FF 0%, #C9B8F5 50%, #FFCDBD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFE9A8 0%, #FFCDBD 50%, #C9B8F5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Print Specific Rules */
+@media print {
+  @page {
+    size: auto;
+    margin: 10mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    display: flex !important;
+    position: static !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20px 0 !important;
+    background: transparent !important;
+  }
+
+  .printable-badge-root {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

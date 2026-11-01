@@ -1,0 +1,6 @@
+{
+  "name": "BADGEVERSE — 3D Personality Badge Generator",
+  "description": "An immersive 3D personality-based QR code badge generator with interactive discovery, custom digital identities, and print-ready passes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
